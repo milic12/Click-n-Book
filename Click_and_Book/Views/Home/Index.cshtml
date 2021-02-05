@@ -1,0 +1,302 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+
+}
+
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>@ViewData["Title"] - Click_and_Book</title>
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="~/css/site.css" />
+        <link rel="stylesheet" href="~/css/bootstrap1.min.css">
+
+
+
+        <!-- load stylesheets -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700">
+        <link rel="stylesheet" href="~/font-awesome-4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="~/css/bootstrap1.min.css">
+        <link rel="stylesheet" type="text/css" href="~/slick/slick.css" />
+        <link rel="stylesheet" type="text/css" href="~/slick/slick-theme.css" />
+        <link rel="stylesheet" type="text/css" href="~/css/datepicker.css" />
+        <link rel="stylesheet" href="~/css/tooplate-style.css">
+
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    </head>
+
+    <body>
+
+
+
+        <div class="tm-section-2">
+            <div class="container">
+                <div class="row">
+                    <div class="col text-center">
+                        <h2 class="tm-section-title">We are here to help you book your apartment !</h2>
+                        <p class="tm-color-white tm-section-subtitle">Start Now</p>
+                        <a href="Identity/Account/Login" class="tm-color-white tm-btn-white-bordered">Find Apartment</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="tm-section tm-position-relative">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none" class="tm-section-down-arrow">
+                <polygon fill="#ee5057" points="0,0  100,0  50,60"></polygon>
+            </svg>
+            <div class="container tm-pt-5 tm-pb-4">
+                <div class="row text-center">
+                    <article class="col-sm-12 col-md-4 col-lg-4 col-xl-4 tm-article">
+                        <i class="fa tm-fa-6x fa-address-book tm-color-primary tm-margin-b-20"></i>
+                        <h3 class="tm-color-primary tm-article-title-1">Efficient reservation</h3>
+                        <p>Lorem Ipsum je naziv uobičajene podvrste teksta za rezervirano mjesto. Lorem Ipsum se vrlo često koristi kada recimo neki dio koji se inače treba ispuniti tekstom (koji nešto znači)  je privremeno prazan. Ipak, kako ne bi bio prazan koristi se Lorem Ipsum..</p>
+                        <a href="#" class="text-uppercase tm-color-primary tm-font-semibold">Continue reading...</a>
+                    </article>
+                    <article class="col-sm-12 col-md-4 col-lg-4 col-xl-4 tm-article">
+                        <i class="fa tm-fa-6x fa-legal tm-color-primary tm-margin-b-20"></i>
+                        <h3 class="tm-color-primary tm-article-title-1">Trusted with all legal certificates</h3>
+                        <p>Lorem Ipsum je naziv uobičajene podvrste teksta za rezervirano mjesto. Lorem Ipsum se vrlo često koristi kada recimo neki dio koji se inače treba ispuniti tekstom (koji nešto znači)  je privremeno prazan. Ipak, kako ne bi bio prazan koristi se Lorem Ipsum.</p>
+                        <a href="#" class="text-uppercase tm-color-primary tm-font-semibold">Continue reading...</a>
+                    </article>
+                    <article class="col-sm-12 col-md-4 col-lg-4 col-xl-4 tm-article">
+                        <i class="fa tm-fa-6x fa-handshake-o tm-color-primary tm-margin-b-20"></i>
+                        <h3 class="tm-color-primary tm-article-title-1">Fair deals</h3>
+                        <p>Lorem Ipsum je naziv uobičajene podvrste teksta za rezervirano mjesto. Lorem Ipsum se vrlo često koristi kada recimo neki dio koji se inače treba ispuniti tekstom (koji nešto znači)  je privremeno prazan. Ipak, kako ne bi bio prazan koristi se Lorem Ipsum..</p>
+                        <a href="#" class="text-uppercase tm-color-primary tm-font-semibold">Continue reading...</a>
+                    </article>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="carousel">
+                <input type="radio" id="carousel-1" name="carousel[]" checked>
+                <input type="radio" id="carousel-2" name="carousel[]">
+                <input type="radio" id="carousel-3" name="carousel[]">
+                <input type="radio" id="carousel-4" name="carousel[]">
+                <input type="radio" id="carousel-5" name="carousel[]">
+                <ul class="carousel__items">
+                    <li class="carousel__item">  <img src="~/img/split31.jpg" alt="Image" class="img-fluid"></li>
+                    <li class="carousel__item">  <img src="~/img/split.jpg" alt="Image" class="img-fluid"></li>
+                    <li class="carousel__item">  <img src="~/img/pujanke.jpg" alt="Image" class="img-fluid"></li>
+                    <li class="carousel__item">  <img src="~/img/split3.jpg" alt="Image" class="img-fluid"></li>
+                    <li class="carousel__item">  <img src="~/img/split3.jpg" alt="Image" class="img-fluid"></li>
+                </ul>
+                <div class="carousel__prev">
+                    <label for="carousel-1"></label>
+                    <label for="carousel-2"></label>
+                    <label for="carousel-3"></label>
+                    <label for="carousel-4"></label>
+                    <label for="carousel-5"></label>
+                </div>
+                <div class="carousel__next">
+                    <label for="carousel-1"></label>
+                    <label for="carousel-2"></label>
+                    <label for="carousel-3"></label>
+                    <label for="carousel-4"></label>
+                    <label for="carousel-5"></label>
+                </div>
+                <div class="carousel__nav">
+                    <label for="carousel-1"></label>
+                    <label for="carousel-2"></label>
+                    <label for="carousel-3"></label>
+                    <label for="carousel-4"></label>
+                    <label for="carousel-5"></label>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+        <div class="tm-section tm-section-pad tm-bg-img tm-position-relative" id="tm-section-6">
+            <div class="container ie-h-align-center-fix">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-7">
+                        <div id="google-map"></div>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-5 mt-3 mt-md-0">
+                        <div class="tm-bg-white tm-p-4">
+                            <form action="index.html" method="post" class="contact-form">
+                                <div class="form-group">
+                                    <input type="text" id="contact_name" name="contact_name" class="form-control" placeholder="Name" required />
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" id="contact_email" name="contact_email" class="form-control" placeholder="Email" required />
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" id="contact_subject" name="contact_subject" class="form-control" placeholder="Subject" required />
+                                </div>
+                                <div class="form-group">
+                                    <textarea id="contact_message" name="contact_message" class="form-control" rows="9" placeholder="Message" required></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary tm-btn-primary">Send Message Now</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    
+
+
+        <!-- load JS files -->
+        <script src="~/js/jquery-1.11.3.min.js"></script>             <!-- jQuery (https://jquery.com/download/) -->
+        <script src="~/js/popper.min.js"></script>                    <!-- https://popper.js.org/ -->
+        <script src="~/js/bootstrap.min.js"></script>                 <!-- https://getbootstrap.com/ -->
+        <script src="~/js/datepicker.min.js"></script>                <!-- https://github.com/qodesmith/datepicker -->
+        <script src="~/js/jquery.singlePageNav.min.js"></script>      <!-- Single Page Nav (https://github.com/ChrisWojcik/single-page-nav) -->
+        <script src="~/slick/slick.min.js"></script>                  <!-- http://kenwheeler.github.io/slick/ -->
+        <script>
+
+            /* Google map
+            ------------------------------------------------*/
+            var map = '';
+            var center;
+
+            function initialize() {
+                var mapOptions = {
+                    zoom: 16,
+                    center: new google.maps.LatLng(13.7567928, 100.5653741),
+                    scrollwheel: false
+                };
+
+                map = new google.maps.Map(document.getElementById('google-map'), mapOptions);
+
+                google.maps.event.addDomListener(map, 'idle', function () {
+                    calculateCenter();
+                });
+
+                google.maps.event.addDomListener(window, 'resize', function () {
+                    map.setCenter(center);
+                });
+            }
+
+            function calculateCenter() {
+                center = map.getCenter();
+            }
+
+            function loadGoogleMap() {
+                var script = document.createElement('script');
+                script.type = 'text/javascript';
+                script.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyDVWt4rJfibfsEDvcuaChUaZRS5NXey1Cs&v=3.exp&sensor=false&' + 'callback=initialize';
+                document.body.appendChild(script);
+            }
+
+            function setCarousel() {
+
+                if ($('.tm-article-carousel').hasClass('slick-initialized')) {
+                    $('.tm-article-carousel').slick('destroy');
+                }
+
+                if ($(window).width() < 438) {
+                    // Slick carousel
+                    $('.tm-article-carousel').slick({
+                        infinite: false,
+                        dots: true,
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+                    });
+                }
+                else {
+                    $('.tm-article-carousel').slick({
+                        infinite: false,
+                        dots: true,
+                        slidesToShow: 2,
+                        slidesToScroll: 1
+                    });
+                }
+            }
+
+            function setPageNav() {
+                if ($(window).width() > 991) {
+                    $('#tm-top-bar').singlePageNav({
+                        currentClass: 'active',
+                        offset: 79
+                    });
+                }
+                else {
+                    $('#tm-top-bar').singlePageNav({
+                        currentClass: 'active',
+                        offset: 65
+                    });
+                }
+            }
+
+            function togglePlayPause() {
+                vid = $('.tmVideo').get(0);
+
+                if (vid.paused) {
+                    vid.play();
+                    $('.tm-btn-play').hide();
+                    $('.tm-btn-pause').show();
+                }
+                else {
+                    vid.pause();
+                    $('.tm-btn-play').show();
+                    $('.tm-btn-pause').hide();
+                }
+            }
+
+            $(document).ready(function () {
+
+                $(window).on("scroll", function () {
+                    if ($(window).scrollTop() > 100) {
+                        $(".tm-top-bar").addClass("active");
+                    } else {
+                        //remove the background property so it comes transparent again (defined in your css)
+                        $(".tm-top-bar").removeClass("active");
+                    }
+                });
+
+                // Google Map
+                loadGoogleMap();
+
+                // Date Picker
+                const pickerCheckIn = datepicker('#inputCheckIn');
+                const pickerCheckOut = datepicker('#inputCheckOut');
+
+                // Slick carousel
+                setCarousel();
+                setPageNav();
+
+                $(window).resize(function () {
+                    setCarousel();
+                    setPageNav();
+                });
+
+                // Close navbar after clicked
+                $('.nav-link').click(function () {
+                    $('#mainNav').removeClass('show');
+                });
+
+                // Control video
+                $('.tm-btn-play').click(function () {
+                    togglePlayPause();
+                });
+
+                $('.tm-btn-pause').click(function () {
+                    togglePlayPause();
+                });
+
+                // Update the current year in copyright
+                $('.tm-current-year').text(new Date().getFullYear());
+            });
+
+        </script>
+
+    </body>
+    </html>
+
