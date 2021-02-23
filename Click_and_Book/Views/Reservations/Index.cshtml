@@ -1,0 +1,47 @@
+﻿@model Click_and_Book.ViewModels.ReservationsModel;
+@{ ViewData["Title"] = "My Reservations"; }
+
+
+@if(Model.Reservations.Count() > 0)
+{
+    foreach (var reserv in Model.Reservations)
+    {
+<div class="col-xs-12 col-md-12 col-lg-9 col-xl-9 mt-0 mt-sm-3">
+    <h2>@reserv.Apartment.Name</h2>
+    <p>Location: @reserv.Apartment.Address, @reserv.Apartment.CityBlock.Name</p>
+    <p>Period: @reserv.TimeFrom.Date.ToShortDateString() - @reserv.TimeTo.Date.ToShortDateString()</p>
+    <p>Price: @reserv.Price kn</p>
+    <p>Invoice#: @reserv.Id</p>
+    @if (reserv.IsCancel == false && reserv.IsActive == false)
+    {
+        <h4>Past</h4>
+    }
+    @if (reserv.IsCancel == true)
+    {
+        <h4>Canceled</h4>
+    }
+    @if (reserv.IsActive == true && reserv.TimeFrom > DateTime.Now)
+    {
+        @if (reserv.IsApproved == true)
+        {
+            <h4>Approved</h4>
+        }
+        else
+        {
+            <h4>Pay process</h4>
+        }
+        <h4>Active</h4>
+            <a type="button" class="btn btn-danger" href="Reservations/Cancel/@reserv.Id">Cancel</a>
+    }
+    else if (reserv.IsActive == true && reserv.IsCancel != true)
+    {
+        <h4>In Process</h4>
+    }
+</div>
+<br />
+    }
+}
+else
+{
+    <h4>You haven't reservations yet!</h4>
+}

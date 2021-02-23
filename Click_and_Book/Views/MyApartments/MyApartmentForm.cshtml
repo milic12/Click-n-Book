@@ -1,0 +1,145 @@
+﻿@model Click_and_Book.ViewModels.UpdateApartmentModel;
+@{
+    ViewData["Title"] = "My Apartment";
+}
+
+<h2>@Model.Title Apartment</h2>
+
+<div class="row">
+    <div class="col-md-4">
+        <form method="post" enctype="multipart/form-data" asp-controller="MyApartments" asp-action="Update">
+            <div asp-validation-summary="All" class="text-danger"></div>
+            <input type="hidden" asp-for="Apartment.Id" />
+            <div class="form-group">
+                <label asp-for="Apartment.Name" class="control-label"></label>
+                <input asp-for="Apartment.Name" class="form-control" />
+                <span asp-validation-for="Apartment.Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Apartment.Price" class="control-label"></label>
+                <input asp-for="Apartment.Price" class="form-control" />
+                <span asp-validation-for="Apartment.Price" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Apartment.NumBeds" class="control-label"></label>
+                <input asp-for="Apartment.NumBeds" class="form-control" />
+                <span asp-validation-for="Apartment.NumBeds" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Apartment.NumRooms" class="control-label"></label>
+                <input asp-for="Apartment.NumRooms" class="form-control" />
+                <span asp-validation-for="Apartment.NumRooms" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Apartment.MaxPeople" class="control-label"></label>
+                <input asp-for="Apartment.MaxPeople" class="form-control" />
+                <span asp-validation-for="Apartment.MaxPeople" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Apartment.NumStars" class="control-label"></label>
+                <input asp-for="Apartment.NumStars" class="form-control" />
+                <span asp-validation-for="Apartment.NumStars" class="text-danger"></span>
+                <div class="form-group">
+                    <div class="checkbox">
+                        <input asp-for="Apartment.Balcony" />
+                        <label asp-for="Apartment.Balcony"></label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="checkbox">
+                        <input asp-for="Apartment.AirConditioner" />
+                        <label asp-for="Apartment.AirConditioner"></label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Apartment.CategoryId" class="control-label"></label>
+                    <select asp-for="Apartment.CategoryId" class="form-control" asp-items="@(new SelectList(Model.Categories, "Id", "Name"))">
+                        <option value="0">Select apartment category</option>
+                    </select>
+                    <span asp-validation-for="Apartment.CategoryId" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Apartment.Address" class="control-label"></label>
+                    <input asp-for="Apartment.Address" class="form-control" />
+                    <span asp-validation-for="Apartment.Address" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Apartment.CityBlockId" class="control-label"></label>
+                    <select asp-for="Apartment.CityBlockId" class="form-control" asp-items="@(new SelectList(Model.CityBlocks, "Id", "Name"))">
+                        <option value="0">Select city block</option>
+                    </select>
+                    <span asp-validation-for="Apartment.CityBlockId" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="ImageFiles" class="control-label"></label>
+                    <input asp-for="ImageFiles" class="form-control" accept="image/*" multiple="multiple" />
+                    <span asp-validation-for="ImageFiles" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Save" class="btn btn-danger" />
+                </div>
+        </form>
+
+        @if (Model.Apartment.Images.Count != 0)
+        {
+            <div class="container" style="background-color: darkgray">
+                <div class="carousel">
+                    @{int i = 1; }
+                    @foreach (var image in Model.Apartment.Images)
+                    {
+                        if (i == 1)
+                        {
+                            <input type="radio" id="carousel-@i" name="carousel[]" checked>
+                        }
+                        else
+                        {
+                            <input type="radio" id="carousel-@i" name="carousel[]">
+                        }
+                        i++;
+                    }
+                    <ul class="carousel__items">
+                        @foreach (var image in Model.Apartment.Images)
+                        {
+                            <li class="carousel__item">  <img src="~/ApartmentImages/@image.ImageName" alt="Image" class="img-fluid"></li>
+                        }
+                    </ul>
+                    <div class="carousel__prev">
+                        @{ i = 1;}
+                        @foreach (var image in Model.Apartment.Images)
+                        {
+                            <label for="carousel-@i"></label>
+                            i++;
+                        }
+                    </div>
+                    <div class="carousel__next">
+                        @{ i = 1;}
+                        @foreach (var image in Model.Apartment.Images)
+                        {
+                            <label for="carousel-@i"></label>
+                            i++;
+                        }
+                    </div>
+                    <div class="carousel__nav">
+                        @{ i = 1;}
+                        @foreach (var image in Model.Apartment.Images)
+                        {
+                            <label for="carousel-@i"></label>
+                            i++;
+                        }
+                    </div>
+                </div>
+            </div>
+
+            <form asp-controller="MyApartments" asp-action="DeleteImages">
+                <div class="form-group">
+                    <input type="hidden" asp-for="Apartment.Id" />
+                    <input type="submit" value="Delete Images" class="btn btn-danger" />
+                </div>
+            </form>
+        }
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

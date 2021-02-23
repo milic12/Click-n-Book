@@ -1,0 +1,40 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UserSecretsId>aspnet-Click_and_Book-A8218698-AF12-4632-8DAB-FA8ADBE5BE9D</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Data\Migrations\20210122093039_AddInitialModels.cs" />
+    <Compile Remove="Data\Migrations\20210122093039_AddInitialModels.Designer.cs" />
+    <Compile Remove="Data\Migrations\20210122112821_AddInitialModels.cs" />
+    <Compile Remove="Data\Migrations\20210122112821_AddInitialModels.Designer.cs" />
+    <Compile Remove="Data\Migrations\20210122114559_AddInitialModels.cs" />
+    <Compile Remove="Data\Migrations\20210122114559_AddInitialModels.Designer.cs" />
+    <Compile Remove="Data\Migrations\20210122114848_AddInitialModels.cs" />
+    <Compile Remove="Data\Migrations\20210122114848_AddInitialModels.Designer.cs" />
+    <Compile Remove="Data\Migrations\20210122120525_AddInitialModels.cs" />
+    <Compile Remove="Data\Migrations\20210122120525_AddInitialModels.Designer.cs" />
+    <Compile Remove="Data\Migrations\20210122123655_AddOwnerAndClient.cs" />
+    <Compile Remove="Data\Migrations\20210122123655_AddOwnerAndClient.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="3.1.9" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="3.1.11" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="3.1.11" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.11" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.11">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.5" />
+    <PackageReference Include="SendGrid" Version="9.22.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\ApartmentImages\" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,229 @@
+﻿@using Microsoft.AspNetCore.Identity;
+@inject SignInManager<IdentityUser> SignInManager;
+@inject UserManager<IdentityUser> UserManager;
+@model Click_and_Book.ViewModels.ApartmentSearchModel;
+@{ ViewData["Title"] = "Apartments"; }
+
+<div class="tm-main-content" id="top">
+    <div class="tm-top-bar-bg"></div>
+
+    <div class="tm-section tm-bg-img" id="tm-section-1">
+        <div class="tm-bg-white ie-container-width-fix-2">
+            <div class="container ie-h-align-center-fix">
+                <div class="row">
+                    <div class="col-xs-12 ml-auto mr-auto ie-container-width-fix">
+                        <form method="get" class="tm-search-form tm-section-pad-2" asp-controller="Apartments" asp-action="Search">
+                            <div class="form-row tm-search-form-row">
+                                <div class="form-group tm-form-element tm-form-element-50">
+                                    <select asp-for="Apartment.CityBlockId" class="form-control tm-select" asp-items="@(new SelectList(Model.CityBlocks, "Id", "Name"))">
+                                        <option value="0">Select city block</option>
+                                    </select>
+                                    <span asp-validation-for="Apartment.CityBlockId" class="text-danger"></span>
+                                </div>
+                                <div class="form-group tm-form-element tm-form-element-50">
+                                    <span>Check in</span>
+                                    <input asp-for="Reservation.TimeFrom" class="form-control tm-select" type="date" />
+                                    <span asp-validation-for="Reservation.TimeFrom" class="text-danger"></span>
+                                </div>
+                                <div class="form-group tm-form-element tm-form-element-50">
+                                    <span>Check out</span>
+                                    <input asp-for="Reservation.TimeTo" class="form-control tm-select" type="date" />
+                                    <span asp-validation-for="Reservation.TimeTo" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="form-row tm-search-form-row">
+                                <div class="form-group tm-form-element tm-form-element-2">
+                                    <select asp-for="Apartment.MaxPeople" class="form-control tm-select">
+                                        <option value="">Guests</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                        <option value="6">6</option>
+                                        <option value="7">7</option>
+                                        <option value="8">8</option>
+                                        <option value="9">9</option>
+                                        <option value="10">10</option>
+                                    </select>
+                                    <i class="fa fa-2x fa-user tm-form-element-icon"></i>
+                                </div>
+                                <div class="form-group tm-form-element tm-form-element-2">
+                                    <div class="checkbox form-control tm-select">
+                                        <input asp-for="Apartment.Balcony" />
+                                        <label asp-for="Apartment.Balcony"></label>
+                                    </div>
+                                </div>
+                                <div class="form-group tm-form-element tm-form-element-2">
+                                    <div class="checkbox form-control tm-select">
+                                        <input asp-for="Apartment.AirConditioner" />
+                                        <label asp-for="Apartment.AirConditioner"></label>
+                                    </div>
+                                </div>
+                                <div class="form-group tm-form-element tm-form-element-2">
+                                    <button type="submit" class="btn btn-primary tm-btn-search">Check Availability</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @if (Model.FindApartments.Count() > 0)
+    {
+@foreach (var apartment in Model.FindApartments)
+{
+<div class="container tm-pad ">
+    <div class="row tm-bg-white-shadow tm-pad2" style="background-color:#DCDCDC">
+        <div class="col-lg">
+            <div class="container">
+                <div class="carousel tm-pad">
+                    @{int i = 1; }
+                    @foreach (var image in apartment.Images)
+                    {
+                        if (i == 1)
+                        {
+                            <input type="radio" id="carousel_@apartment.Id-@i" name="carousel[]" checked> }
+                        else
+                        {
+                            <input type="radio" id="carousel_@apartment.Id-@i" name="carousel[]">}
+                            i++;
+                        }
+                    <ul class="carousel__items">
+                        @foreach (var image in apartment.Images)
+                        {
+                            <li class="carousel__item">  <img src="~/ApartmentImages/@image.ImageName" alt="Image" class="img-fluid"></li>
+                         }
+                    </ul>
+                    <div class="carousel__prev">
+                        @{ i = 1;}
+                        @foreach (var image in apartment.Images)
+                        {
+                            <label for="carousel_@apartment.Id-@i"></label>i++;
+                        }
+                    </div>
+                    <div class="carousel__next">
+                        @{ i = 1;}
+                        @foreach (var image in apartment.Images)
+                        {
+                            <label for="carousel_@apartment.Id-@i"></label>i++;
+                        }
+                    </div>
+                    <div class="carousel__nav">
+                        @{ i = 1;}
+                        @foreach (var image in apartment.Images)
+                        {
+                            <label for="carousel_@apartment.Id-@i"></label>i++;
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm">
+            <div class="form-group tm-pad">
+                <h2>@apartment.Name</h2>
+            </div>
+            <div class="form-group">
+                <p>Price: @apartment.Price kn</p>
+            </div>
+            <div class="form-group">
+                <p>Number of beds: @apartment.NumBeds</p>
+            </div>
+            <div class="form-group">
+                <p>Number of rooms: @apartment.NumRooms</p>
+            </div>
+            <div class="form-group">
+                <p>Number of guests: @apartment.MaxPeople</p>
+            </div>
+            <div class="form-group">
+                <p>Stars: @apartment.NumStars</p>
+            </div>
+            @if (apartment.Balcony == true)
+            {
+                <div class="form-group">
+                    <p>Balcony</p>
+                </div>
+            }
+            @if (apartment.AirConditioner == true)
+            {
+                <div class="form-group">
+                    <p>Air Condition</p>
+                </div>
+             }
+            <div class="form-group">
+                <p>Category: @apartment.Category.Name</p>
+            </div>
+            <div class="form-group">
+                <p>Address: @apartment.Address</p>
+            </div>
+            <div class="form-group">
+                <p>City Block: @apartment.CityBlock.Name</p>
+            </div>
+            <div class="form-group">
+                <p>Owner: @apartment.Owner.UserName</p>
+            </div>
+            @if (SignInManager.IsSignedIn(User))
+            {
+            <div style="margin-top: 50px">
+                <form class="form-inline" asp-controller="Reservations" asp-action="Reserve">
+                    <input type="hidden" asp-for="Reservation.TimeFrom" class="form-control tm-select" />
+                    <input type="hidden" asp-for="Reservation.TimeTo" class="form-control tm-select" />
+                    <input type="hidden" asp-for="Reservation.ApartmentId" value="@apartment.Id" />
+                    <button type="submit" class="btn btn-danger">Reserve Apartment</button>
+                </form>
+            </div>
+            }
+
+        </div>
+    </div>
+</div>
+                    <br />
+  }
+}
+
+    <div class="container ie-h-align-center-fix">
+        <div class="row tm-flex-align-center">
+            <div class="col-xs-12 col-md-12 col-lg-3 col-xl-3 tm-media-title-container">
+                <h5 class=" tm-section-title-2">Popular locations </h5>
+                <h4 class="tm-color-primary tm-font-semibold tm-section-subtitle-2">Split  </h4>
+            </div>
+            <div class="col-xs-12 col-md-12 col-lg-9 col-xl-9 mt-0 mt-sm-3">
+                <div class="ml-auto tm-bg-white-shadow tm-pad tm-media-container">
+                    <article class="media tm-margin-b-20 tm-media-1">
+                        <img src="~/img/split3.jpg" alt="Image">
+                        <div class="media-body tm-media-body-1 tm-media-body-v-center">
+                            <h3 class="tm-font-semibold tm-article-title-3">Split3</h3>
+                            <p>Lorem Ipsum je naziv uobičajene podvrste teksta za rezervirano mjesto. Lorem Ipsum se vrlo često koristi kada recimo neki dio koji se inače treba ispuniti tekstom (koji nešto znači)  je privremeno prazan. Ipak, kako ne bi bio prazan koristi se Lorem Ipsum.</p>
+                            <a href="#" class="text-uppercase tm-color-primary tm-font-semibold">Book now...</a>
+                        </div>
+                    </article>
+                    <article class="media tm-margin-b-20 tm-media-1">
+                        <img src="~/img/meje.jpg" alt="Image">
+                        <div class="media-body tm-media-body-1 tm-media-body-v-center">
+                            <h3 class="tm-font-semibold tm-article-title-3">Meje</h3>
+                            <p>Lorem Ipsum je naziv uobičajene podvrste teksta za rezervirano mjesto. Lorem Ipsum se vrlo često koristi kada recimo neki dio koji se inače treba ispuniti tekstom (koji nešto znači)  je privremeno prazan. Ipak, kako ne bi bio prazan koristi se Lorem Ipsum..</p>
+                            <a href="#" class="text-uppercase tm-color-primary tm-font-semibold">Book now...</a>
+                        </div>
+                    </article>
+                    <article class="media tm-margin-b-20 tm-media-1">
+                        <img src="~/img/spinut.jpg" alt="Image">
+                        <div class="media-body tm-media-body-1 tm-media-body-v-center">
+                            <h3 class="tm-font-semibold tm-article-title-3">Spinut</h3>
+                            <p>Lorem Ipsum je naziv uobičajene podvrste teksta za rezervirano mjesto. Lorem Ipsum se vrlo često koristi kada recimo neki dio koji se inače treba ispuniti tekstom (koji nešto znači)  je privremeno prazan. Ipak, kako ne bi bio prazan koristi se Lorem Ipsum.</p>
+                            <a href="apartment" class="text-uppercase tm-color-primary tm-font-semibold">Book now...</a>
+                        </div>
+                    </article>
+                </div>
+                <br />
+                <br />
+                <br />
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

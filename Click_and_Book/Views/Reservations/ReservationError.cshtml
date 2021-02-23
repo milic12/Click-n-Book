@@ -1,0 +1,12 @@
+﻿@model Click_and_Book.Models.Reservation
+@{
+    ViewData["Title"] = "Reservation Error";
+}
+
+<h4>Reservation Error</h4>
+<form class="form-inline" asp-controller="Reservations" asp-action="Reserve">
+    <input type="hidden" asp-for="TimeFrom" class="form-control tm-select" />
+    <input type="hidden" asp-for="TimeTo" class="form-control tm-select" />
+    <input type="hidden" asp-for="ApartmentId"/>
+    <button type="submit" class="btn btn-danger">Try Again!</button>
+</form>
