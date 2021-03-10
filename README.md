@@ -5,10 +5,10 @@
 
 ## Quick start
 
-- [Download from Github zip](https://github.com//milic12/Click-n-Book/archive/master.zip).
+- [Download from Github zip](https://github.com/milic12/Click-n-Book/archive/front-end-final.zip).
 - Clone
 ```bash
-https://github.com/milic12/G.O.Vrbnik.git
+https://github.com/milic12/Click-n-Book.git
 ```
 - Update Entity datebase
  
