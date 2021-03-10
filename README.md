@@ -3,6 +3,23 @@
 ## Student project made with .Net core, Html, Css, Js
 ### App allows client to choose and book his apartment in Split
 
+- [Download from Github zip](https://github.com//milic12/Click-n-Book/archive/master.zip).
+- Clone
+```bash
+https://github.com/milic12/G.O.Vrbnik.git
+```
+- Update Entity datebase
+- In Package Manager Console
+```bash
+PM> Update-Database 
+```
+- In CLI
+```bash
+> dotnet ef database update 
+```
+- Run it at http://localhost:9090/
+
+
 [![img1.jpg](https://i.postimg.cc/QdrzWKMD/img1.jpg)](https://postimg.cc/w702CvJ4)
 [![img2.jpg](https://i.postimg.cc/nzMStv34/img2.jpg)](https://postimg.cc/dkPj2TP3)
 [![img3.jpg](https://i.postimg.cc/gJ5Scn7f/img3.jpg)](https://postimg.cc/sQY9wDsc)
