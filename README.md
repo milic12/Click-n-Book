@@ -8,7 +8,7 @@
 - [Download from Github zip](https://github.com/milic12/Click-n-Book/archive/front-end-final.zip).
 - Clone
 ```bash
-https://github.com/milic12/Click-n-Book.git
+https://github.com/milic12/Click-n-Book/tree/front-end-final.git
 ```
 - Update Entity datebase
  
