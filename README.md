@@ -11,7 +11,8 @@
 https://github.com/milic12/G.O.Vrbnik.git
 ```
 - Update Entity datebase
-In Package Manager Console
+ 
+In Package Manager Console run command
 ```bash
 PM> Update-Database 
 ```
