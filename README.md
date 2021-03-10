@@ -3,6 +3,8 @@
 ## Student project made with .Net core, Html, Css, Js
 ### App allows client to choose and book his apartment in Split
 
+## Quick start
+
 - [Download from Github zip](https://github.com//milic12/Click-n-Book/archive/master.zip).
 - Clone
 ```bash
