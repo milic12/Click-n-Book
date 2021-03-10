@@ -1,7 +1,7 @@
 # Click-n-Book
 
 ## Student project made with .Net core, Html, Css, Js
-### Allows client to choose and book his apartment in Split
+### App allows client to choose and book his apartment in Split
 
 [![img1.jpg](https://i.postimg.cc/QdrzWKMD/img1.jpg)](https://postimg.cc/w702CvJ4)
 [![img2.jpg](https://i.postimg.cc/nzMStv34/img2.jpg)](https://postimg.cc/dkPj2TP3)
