@@ -11,11 +11,11 @@
 https://github.com/milic12/G.O.Vrbnik.git
 ```
 - Update Entity datebase
-- In Package Manager Console
+In Package Manager Console
 ```bash
 PM> Update-Database 
 ```
-- In CLI
+Or In CLI
 ```bash
 > dotnet ef database update 
 ```
