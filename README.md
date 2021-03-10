@@ -1,10 +1,13 @@
 # Click-n-Book
 
-Student project
+## Student project made with .Net core, Html, Css, Js
+### Allows client to choose and book his apartment in Split
 
-[![slika1.jpg](https://i.postimg.cc/VNFxnyNg/slika1.jpg)](https://postimg.cc/GBHgn5GT)
-[![slika2.jpg](https://i.postimg.cc/HxsftScg/slika2.jpg)](https://postimg.cc/8F9KpmmK)
-[![slika3.jpg](https://i.postimg.cc/SQPwWfmB/slika3.jpg)](https://postimg.cc/LhzCSfYD)
-[![slika4.jpg](https://i.postimg.cc/J0SvMMTr/slika4.jpg)](https://postimg.cc/kRFfy33z)
-[![slika5.jpg](https://i.postimg.cc/D0SH98Pp/slika5.jpg)](https://postimg.cc/rRLfWyb5)
-[![slika6.jpg](https://i.postimg.cc/63jFbdnG/slika6.jpg)](https://postimg.cc/wyNW7RW6)
+[![img1.jpg](https://i.postimg.cc/QdrzWKMD/img1.jpg)](https://postimg.cc/w702CvJ4)
+[![img2.jpg](https://i.postimg.cc/nzMStv34/img2.jpg)](https://postimg.cc/dkPj2TP3)
+[![img3.jpg](https://i.postimg.cc/gJ5Scn7f/img3.jpg)](https://postimg.cc/sQY9wDsc)
+[![img4.jpg](https://i.postimg.cc/JhrdpwJd/img4.jpg)](https://postimg.cc/gx7D0Tgv)
+[![img5.jpg](https://i.postimg.cc/BZkk4V9X/img5.jpg)](https://postimg.cc/WtmX7S4v)
+[![img6.jpg](https://i.postimg.cc/dtCX1jwn/img6.jpg)](https://postimg.cc/MvWt3Rcj)
+[![img7.jpg](https://i.postimg.cc/QMfYP6JN/img7.jpg)](https://postimg.cc/gw6KLH71)
+[![img8.jpg](https://i.postimg.cc/MpbF0ZcQ/img8.jpg)](https://postimg.cc/w1M2gpQq)
